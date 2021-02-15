@@ -11,13 +11,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/scss/variables';
+// $red: red;
+
 @mixin test {
-  background: red;
+  // background: $red;
 }
 
 .test {
   @include test;
 
-  color: red;
+  // color: $red;
 }
 </style>

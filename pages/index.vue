@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    strona startowa
-    <nuxt-link to="contact">
-      Kontakt
-    </nuxt-link>
+    <About />
   </div>
 </template>
 
@@ -12,7 +9,10 @@ export default {}
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .container {
+  font-family: "Lato", Verdana, sans-serif;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -21,7 +21,7 @@ export default {}
   text-align: center;
 }
 
-.title {
+/* .title {
   font-family:
     'Quicksand',
     'Source Sans Pro',
@@ -37,7 +37,7 @@ export default {}
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
+} */
 
 .subtitle {
   font-weight: 300;
