@@ -12,6 +12,8 @@ html {
   font-family: "Lato", Verdana, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
+
+  /* -ms- to jest prefix ktory ustawia automatycznie postcss !!!!! */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;

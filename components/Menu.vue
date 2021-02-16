@@ -1,7 +1,7 @@
 <template>
   <b-navbar class="navbar" toggleable="lg" type="light">
     <b-navbar-brand class="name" href="#">
-      Katarzyna Skibińska
+      WEB DEVELOPER
     </b-navbar-brand>
     <b-navbar-toggle class="navbar-toggle" target="nav-collapse" />
     <b-collapse id="nav-collapse" class="coolapse" is-nav>
@@ -20,27 +20,57 @@
             </p>
           </div>
         </div>
-        <b-nav-item class="nav-item active">
-          <a class="nav-link"><b-icon icon="person-fill" class="icon" /> O mnie<span /></a>
-        </b-nav-item>
-        <b-nav-item class="nav-item">
-          <a class="nav-link"><b-icon icon="code-square" class="icon" /> Umiejętności programistyczne<span /></a>
-        </b-nav-item>
-        <b-nav-item class="nav-item">
-          <a class="nav-link"><b-icon icon="briefcase-fill" class="icon" /> Projekty<span /></a>
-        </b-nav-item>
-        <b-nav-item class="nav-item">
-          <a class="nav-link"><b-icon icon="file-plus" class="icon" /> Inne umiejętności<span /></a>
-        </b-nav-item>
-        <b-nav-item class="nav-item">
-          <a class="nav-link"><b-icon icon="envelope-fill" class="icon" /> Kontakt<span /></a>
+        <b-nav-item
+          v-for="(item, index) in menu"
+          :key="index"
+          class="nav-item"
+          :to="item.to"
+          exact
+        >
+          <b-icon :icon="item.icon" class="icon" />
+          <span>{{ item.text }}</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 <script>
-export default {}
+export default {
+  data: () => ({
+    menu: [
+      {
+        icon: 'person-fill',
+        text: 'O mnie',
+        to: '/'
+      },
+      {
+        icon: 'code-square',
+        text: 'Umiejętności programistyczne',
+        to: '/developerSkills'
+      },
+      {
+        icon: 'briefcase-fill',
+        text: 'Projekty',
+        to: '/contact'
+      },
+      {
+        icon: 'plus',
+        text: 'Inne umiejętności',
+        to: '/contact'
+      },
+      {
+        icon: 'images',
+        text: 'Galeria',
+        to: '/contact'
+      },
+      {
+        icon: 'envelope-fill',
+        text: 'Kontakt',
+        to: '/contact'
+      }
+    ]
+  })
+}
 </script>
 <style lang="scss">
 @import "@/assets/scss/variables";
@@ -49,7 +79,7 @@ export default {}
 .navbar {
   position: relative;
   background-color: $myColorBase;
-  box-shadow: inset 50px 0 190px $shineColor;
+  box-shadow: inset 300px 0 80px $shineColor;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -61,7 +91,6 @@ export default {}
   font-size: 1.5rem;
   font-weight: bold;
   margin: auto;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .navbar-toggle {
@@ -77,8 +106,7 @@ export default {}
 
 .collapse {
   flex-direction: column !important;
-  flex-basis: 100%;
-  flex-grow: 1;
+  flex: 1 0 100%;
   align-items: center;
 }
 
@@ -92,9 +120,7 @@ export default {}
     padding: 0;
     width: 160px;
     height: 160px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
 
     &.main {
       border-radius: 20%;
@@ -105,13 +131,11 @@ export default {}
 
   &.about-text {
     font-size: 0.975rem;
-    // font-weight: bolder;
   }
 }
 
 .nav-item {
   font-weight: bold;
-  display: list-item;
   height: 3rem;
   width: auto;
   text-align: left;
@@ -122,14 +146,14 @@ export default {}
 }
 
 .nav-link {
-  padding-top: 1rem;
-  color: rgba(0, 0, 0, 0.986);
+  padding-top: 2rem;
+  color: rgba(0, 0, 0, 0);
 }
 
-.svg {
+.icon {
   overflow: visible;
   width: 1.25em;
-  margin-right: 0.5rem !important;
+  // margin-right: 0.5rem !important;
   text-align: center;
   display: inline-block;
   font-size: inherit;
@@ -137,4 +161,8 @@ export default {}
   vertical-align: -0.125em;
 }
 
+.card {
+  border: 0.2rem solid blanchedalmond;
+  box-shadow: inset 30px 0 80px antiquewhite;
+}
 </style>

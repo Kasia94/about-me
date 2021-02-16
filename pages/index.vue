@@ -15,6 +15,8 @@ export default {}
   font-family: "Lato", Verdana, sans-serif;
   margin: 0 auto;
   min-height: 100vh;
+
+  /* mixin flex-center - 3 ponizej */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +43,11 @@ export default {}
 
 .subtitle {
   font-weight: 300;
+
+  /* zmienne sass: font-weight: ( 300, 400, 600 ) - i to musi byc zgodne z importem z google fonts
+  zaznacz ktoych uzywasz na str google zeby nie ladowac wszystkich
+  */
+
   font-size: 42px;
   color: #526488;
   word-spacing: 5px;
