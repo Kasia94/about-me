@@ -1,0 +1,19 @@
+.profile-section {
+  display: block;
+  padding-top: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+
+  &.face {
+    padding: 0;
+    width: 160px;
+    height: 160px;
+    margin: 1rem auto;
+  }
+
+  &.main {
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+  }
+}

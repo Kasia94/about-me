@@ -72,7 +72,7 @@ export default {
   })
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/scss/variables";
 @import "@/assets/scss/mixins";
 
@@ -110,28 +110,22 @@ export default {
   align-items: center;
 }
 
-.profile-section {
-  display: block;
-  padding-top: 1rem;
-  text-align: center;
-  box-sizing: border-box;
+// .profile-section {
+//   display: block;
+//   padding-top: 1rem;
+//   text-align: center;
+//   box-sizing: border-box;
 
-  &.face {
-    padding: 0;
-    width: 160px;
-    height: 160px;
-    margin: 1rem auto;
+//   &.face {
+//     padding: 0;
+//     width: 160px;
+//     height: 160px;
+//     margin: 1rem auto;
+//   }
+// }
 
-    &.main {
-      border-radius: 20%;
-      height: 200px;
-      width: 200px;
-    }
-  }
-
-  &.about-text {
-    font-size: 0.975rem;
-  }
+.about-text {
+  font-size: 0.975rem;
 }
 
 .nav-item {
@@ -159,10 +153,5 @@ export default {
   font-size: inherit;
   height: 1em;
   vertical-align: -0.125em;
-}
-
-.card {
-  border: 0.2rem solid blanchedalmond;
-  box-shadow: inset 30px 0 80px antiquewhite;
 }
 </style>

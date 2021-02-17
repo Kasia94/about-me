@@ -5,12 +5,12 @@
         <div class="profile-teaser media flex-column flex-lg-row">
           <div class="media-body">
             <h2>Katarzyna Skibińska</h2>
-            <b-card class="card">
+            <b-card class="card-custom">
               <b-img
                 class="profile-section face main"
                 src="main.jpg"
               />
-              <b-card-text class="describe">
+              <b-card-text class="description">
                 Z wykształcenia jestem magistrem biochemii i bilogii molekularnej,
                 lecz przez ostatnie lata oddałam się pasji programowania z wykorzystaniem języka JavaScript.
                 Rozwijanie wiedzy i umiejętności w tej dziedzinie daje mi wiele sadysfakcji.
@@ -27,11 +27,12 @@
   </div>
 </template>
 <style lang="scss" scoped>
-.describe {
+.description {
   margin-bottom: 1.5rem;
+
+  &::first-letter {
+    font-weight: bold;
+  }
 }
 
-.describe::first-letter {
-  font-weight: bold;
-}
 </style>
