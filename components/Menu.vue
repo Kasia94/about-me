@@ -1,12 +1,12 @@
 <template>
   <b-navbar class="navbar" toggleable="lg" type="light">
+    <b-navbar-toggle target="nav-collapse" />
     <b-navbar-brand class="name" href="#">
       WEB DEVELOPER
     </b-navbar-brand>
-    <b-navbar-toggle class="navbar-toggle" target="nav-collapse" />
     <b-collapse id="nav-collapse" class="coolapse" is-nav>
       <b-navbar-nav>
-        <div class="profile-section d-lg-none">
+        <b-nav-item class="profile-section d-lg-none">
           <b-img
             class="profile-section face"
             src="profile-face.png"
@@ -19,7 +19,7 @@
               poznać mnie i moje umiejętności.
             </p>
           </div>
-        </div>
+        </b-nav-item>
         <b-nav-item
           v-for="(item, index) in menu"
           :key="index"
@@ -46,7 +46,7 @@ export default {
       {
         icon: 'code-square',
         text: 'Umiejętności programistyczne',
-        to: '/developerSkills'
+        to: '/developer-skills'
       },
       {
         icon: 'briefcase-fill',
@@ -56,12 +56,12 @@ export default {
       {
         icon: 'plus',
         text: 'Inne umiejętności',
-        to: '/contact'
+        to: '/other-skills'
       },
       {
         icon: 'images',
         text: 'Galeria',
-        to: '/contact'
+        to: '/gallery'
       },
       {
         icon: 'envelope-fill',
@@ -106,7 +106,7 @@ export default {
 
 .collapse {
   flex-direction: column !important;
-  flex: 1 0 100%;
+  // flex: 1 0 100%;
   align-items: center;
 }
 

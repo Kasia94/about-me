@@ -4,7 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'about-me-nuxt',
+    titleTemplate: '%s - Web Developer',
+    title: '',
     htmlAttrs: {
       lang: 'en'
     },

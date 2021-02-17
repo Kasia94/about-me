@@ -1,12 +1,12 @@
-<template>
-  <div><Photo />kontakt</div>
-</template>
 
+<template>
+  <dir>xxx</dir>
+</template>
 <script>
 export default {
   head () {
     return {
-      title: 'Kontakt'
+      title: 'Galeria'
     }
   }
 }

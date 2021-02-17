@@ -1,2 +1,2 @@
-$myColorBase: rgb(255, 234, 167);
-$shineColor:#ffe4c4;
+$myColorBase: blue;
+$shineColor: lighten($myColorBase, 20%);

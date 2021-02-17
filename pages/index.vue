@@ -5,23 +5,28 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head () {
+    return {
+      title: 'O mnie'
+    }
+  }
+}
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.container {
+/* .container {
   font-family: "Lato", Verdana, sans-serif;
   margin: 0 auto;
   min-height: 100vh;
 
-  /* mixin flex-center - 3 ponizej */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 
 /* .title {
   font-family:
