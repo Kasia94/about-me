@@ -1,3 +1,4 @@
+
 @mixin small {
   @media (max-width: 385px) {
     position: relative;
@@ -7,5 +8,12 @@
 @mixin large {
   @media (min-width: 992px) {
     margin-bottom: 2rem;
+  }
+}
+
+@mixin color-large-menu {
+  @media (min-width: 992px) {
+    background-color: transparent;
+    box-shadow: none;
   }
 }

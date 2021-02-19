@@ -1,2 +1,21 @@
-$myColorBase: blue;
+$myColorBase: rgb(0, 0, 0);
+$colorCard: rgb(29, 55, 112);
+$shineCard: lighten($colorCard, 20%);
 $shineColor: lighten($myColorBase, 20%);
+
+$bg: (
+  rgb(245, 213, 71),
+  rgb(190, 45, 45),
+  rgb(179, 205, 209),
+  rgb(118, 187, 7),
+  rgb(136, 200, 202),
+  rgb(180, 129, 155)
+);
+
+@each $col in $bg {
+  $index: index($bg, $col);
+
+  .bg-puzzle-#{$index} {
+    background-color: $col;
+  }
+}

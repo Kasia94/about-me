@@ -1,4 +1,6 @@
+@import "@/assets/scss/variables";
+
 .card-custom {
-  border: 0.2rem solid blanchedalmond;
-  box-shadow: inset 30px 0 80px antiquewhite;
+  border: 0.2rem solid  $colorCard;
+  box-shadow: inset 30px 0 80px $shineCard;
 }

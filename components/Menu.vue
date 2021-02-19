@@ -1,38 +1,51 @@
 <template>
-  <b-navbar class="navbar" toggleable="lg" type="light">
-    <b-navbar-toggle target="nav-collapse" />
-    <b-navbar-brand class="name" href="#">
-      WEB DEVELOPER
-    </b-navbar-brand>
-    <b-collapse id="nav-collapse" class="coolapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item class="profile-section d-lg-none">
-          <b-img
-            class="profile-section face"
-            src="profile-face.png"
-            rounded="circle"
-            alt="Circle image"
-          />
-          <div class="profile-section about-text">
-            <p>
-              Cześć ! Nazywam się Kasia. Witaj na mojej stronie, gdzie możesz
-              poznać mnie i moje umiejętności.
-            </p>
-          </div>
-        </b-nav-item>
-        <b-nav-item
-          v-for="(item, index) in menu"
-          :key="index"
-          class="nav-item"
-          :to="item.to"
-          exact
-        >
-          <b-icon :icon="item.icon" class="icon" />
-          <span>{{ item.text }}</span>
-        </b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+  <section>
+    <b-navbar v-scroll="scrolling" class="main-navbar" toggleable="lg" type="dark">
+      <b-navbar-toggle target="nav-collapse" />
+      <b-navbar-brand class="name" href="#">
+        WEB DEVELOPER
+      </b-navbar-brand>
+      <b-collapse id="nav-collapse" class="coolapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item class="profile-section d-lg-none">
+            <!-- <b-img
+              class="profile-section face"
+              src="profile-face.png"
+              rounded="circle"
+              alt="Circle image"
+            />
+            <div class="profile-section about-text">
+              <p>
+                Cześć ! Nazywam się Kasia. Witaj na mojej stronie, gdzie możesz
+                poznać mnie i moje umiejętności.
+              </p>
+            </div> -->
+          </b-nav-item>
+          <b-nav-item
+            v-for="(item, index) in menu"
+            :key="index"
+            class="nav-item"
+            :to="item.to"
+            exact
+          >
+            <b-icon :icon="item.icon" class="icon" />
+            <span>{{ item.text }}</span>
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <!-- <header class="header">
+      <div class="container text-light">
+        <h2>
+          Katarzyna Skibińska
+        </h2>
+        <p class="mt-5 ">
+          Cześć ! Nazywam się Kasia. Witaj na mojej stronie, gdzie możesz
+          poznać mnie i moje umiejętności.
+        </p>
+      </div>
+    </header> -->
+  </section>
 </template>
 <script>
 export default {
@@ -47,11 +60,6 @@ export default {
         icon: 'code-square',
         text: 'Umiejętności programistyczne',
         to: '/developer-skills'
-      },
-      {
-        icon: 'briefcase-fill',
-        text: 'Projekty',
-        to: '/contact'
       },
       {
         icon: 'plus',
@@ -69,22 +77,40 @@ export default {
         to: '/contact'
       }
     ]
-  })
+  }),
+  methods: {
+    scrolling () {
+      const navigation = document.querySelectorbyClass('main-navbar')
+      navigation.classList.add('scrolled')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/variables";
 @import "@/assets/scss/mixins";
 
-.navbar {
-  position: relative;
+.main-navbar {
+  position: fixed;
   background-color: $myColorBase;
-  box-shadow: inset 300px 0 80px $shineColor;
+  box-shadow: inset 200px 0 200px $shineColor;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  color: black !important;
+  color: rgb(0, 0, 0) !important;
+  transition: background-color 0.2s ease;
+  z-index: 5;
+
+  @include color-large-menu ;
+
+  &.scrolled {
+    background-color: $myColorBase !important;
+  }
+}
+
+.scrolled {
+  background-color: $myColorBase !important;
 }
 
 .name {
@@ -110,20 +136,6 @@ export default {
   align-items: center;
 }
 
-// .profile-section {
-//   display: block;
-//   padding-top: 1rem;
-//   text-align: center;
-//   box-sizing: border-box;
-
-//   &.face {
-//     padding: 0;
-//     width: 160px;
-//     height: 160px;
-//     margin: 1rem auto;
-//   }
-// }
-
 .about-text {
   font-size: 0.975rem;
 }
@@ -139,9 +151,13 @@ export default {
   @include large;
 }
 
-.nav-link {
+a.nav-link {
   padding-top: 2rem;
-  color: rgba(0, 0, 0, 0);
+  color: white !important;
+
+  &:hover {
+    color: lightblue !important;
+  }
 }
 
 .icon {
@@ -154,4 +170,28 @@ export default {
   height: 1em;
   vertical-align: -0.125em;
 }
+
+.header {
+  padding-top: 7rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(84, 207, 255, 0) 0%, rgba(136, 207, 255, 0) 100%), url(../assets/img/img5.jpg);
+  width: 100%;
+  height: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  z-index: 0;
+}
+
+.container {
+  height: 100% !important;
+  display: block;
+  columns: auto;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
 </style>

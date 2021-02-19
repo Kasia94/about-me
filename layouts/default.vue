@@ -4,6 +4,14 @@
     <Nuxt />
   </div>
 </template>
+<script>
+export default {
+  mounted () {
+    console.log(this.$route)
+  }
+}
+
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
