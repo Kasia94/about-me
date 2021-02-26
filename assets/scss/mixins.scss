@@ -17,3 +17,10 @@
     box-shadow: none;
   }
 }
+
+@mixin small {
+  @media (max-width: 385px) {
+    // position: relative;
+    background-color: rgb(48, 21, 21);
+  }
+}

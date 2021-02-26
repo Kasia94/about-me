@@ -7,6 +7,7 @@
             <b-img
               class="profile-section face main"
               src="main.jpg"
+              alt="Katarzyna Skibińska"
             />
             <b-card-text class="description">
               Z wykształcenia jestem magistrem biochemii i bilogii molekularnej,
