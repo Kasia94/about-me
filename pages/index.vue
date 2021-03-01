@@ -28,6 +28,10 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+.container {
+  text-align: center;
+}
+
 .subtitle {
   font-weight: 300;
 
