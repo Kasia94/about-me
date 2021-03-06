@@ -82,48 +82,20 @@
   </b-container>
 </template>
 <script>
-import axios from 'axios'
+
 import moment from 'moment'
 import 'moment/locale/pl'
 
 export default {
-  data () {
-    return {
-      weatherData: null,
-      lat: null,
-      lon: null,
-      alertText: 'Udało się'
+  computed: {
+    weatherData () {
+      return this.$store.getters['store/getWeatherData']
     }
   },
   mounted () {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.lat = position.coords.latitude
-        this.lon = position.coords.longitude
-        this.getWeather()
-      }, this.defaultLocation.bind(this))
-    } else {
-      this.defaultLocation()
-    }
+    this.$store.dispatch('store/getLocation')
   },
   methods: {
-
-    defaultLocation () {
-      this.lat = 52.22977
-      this.lon = 21.01178
-      this.getWeather()
-    },
-
-    getWeather () {
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&units=metric&appid=${process.env.OPENWEATHERMAP_KEY}&lang=pl`
-        )
-        .then((response) => {
-          this.weatherData = response.data
-        })
-    },
-
     getHour (payload) {
       return moment.unix(payload).format('HH:mm')
     },
