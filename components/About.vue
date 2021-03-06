@@ -12,7 +12,7 @@
             <b-card-text class="description">
               Z wykształcenia jestem magistrem biochemii i bilogii molekularnej,
               lecz przez ostatnie lata oddałam się pasji programowania z wykorzystaniem języka JavaScript.
-              Rozwijanie wiedzy i umiejętności w tej dziedzinie daje mi wiele sadysfakcji.
+              Rozwijanie wiedzy i umiejętności w tej dziedzinie daje mi wiele satysfakcji.
               Interesuję się technologią komputerową, multimediami i biotechnologią. Lubię także, gry planszowe,
               zagadki logiczne oraz muzykę rockową. Jestem osobą otwartą na innych oraz odnajdującą się w pracy zespołowej.
               Zwracam uwagę na szczegóły i uparcie dążę do postawionego sobie celu. Umiem dostosować się do zmieniających się
